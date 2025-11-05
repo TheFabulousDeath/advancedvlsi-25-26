@@ -1,0 +1,343 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Nov  5 13:16:25 2025
+# Process ID: 5761
+# Current directory: /home/vt5655/gitlab/advancedvlsi-25-26/task2/Task2/Task2.runs/synth_1
+# Command line: vivado -log adder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source adder.tcl
+# Log file: /home/vt5655/gitlab/advancedvlsi-25-26/task2/Task2/Task2.runs/synth_1/adder.vds
+# Journal file: /home/vt5655/gitlab/advancedvlsi-25-26/task2/Task2/Task2.runs/synth_1/vivado.jou
+# Running On: o9020-jfd, OS: Linux, CPU Frequency: 3900.000 MHz, CPU Physical cores: 4, Host memory: 33609 MB
+#-----------------------------------------------------------
+source adder.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1593.461 ; gain = 49.875 ; free physical = 25249 ; free virtual = 28082
+Command: synth_design -top adder -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5816
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2362.703 ; gain = 403.664 ; free physical = 24122 ; free virtual = 26980
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'adder' [/home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/adder.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'adder' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/adder.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2445.672 ; gain = 486.633 ; free physical = 24064 ; free virtual = 26922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2463.484 ; gain = 504.445 ; free physical = 24043 ; free virtual = 26910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2463.484 ; gain = 504.445 ; free physical = 24043 ; free virtual = 26910
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2463.484 ; gain = 0.000 ; free physical = 24043 ; free virtual = 26910
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:5]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:5]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'switches[0]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[0]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[1]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[1]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[2]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[2]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[3]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[3]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[4]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[4]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[5]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[5]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[6]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[6]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[7]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'switches[7]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[0]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[0]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[1]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[1]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[2]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[2]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[3]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[3]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[4]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[4]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[5]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[5]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[6]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[6]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[7]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leds[7]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[0]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[0]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[1]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[1]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[2]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[2]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[3]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[3]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[4]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'buttons[4]'. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2536.422 ; gain = 0.000 ; free physical = 24039 ; free virtual = 26898
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2536.457 ; gain = 0.000 ; free physical = 24039 ; free virtual = 26898
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24058 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24058 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24058 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24057 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24066 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24041 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24041 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24041 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24073 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24073 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24073 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24073 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24073 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24073 ; free virtual = 26897
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT2 |     1|
+|2     |LUT4 |     2|
+|3     |LUT5 |     1|
+|4     |LUT6 |     1|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24073 ; free virtual = 26897
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2536.457 ; gain = 504.445 ; free physical = 24073 ; free virtual = 26897
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2536.457 ; gain = 577.418 ; free physical = 24073 ; free virtual = 26897
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2536.457 ; gain = 0.000 ; free physical = 24073 ; free virtual = 26897
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2536.457 ; gain = 0.000 ; free physical = 24352 ; free virtual = 27177
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: a6ec5291
+INFO: [Common 17-83] Releasing license: Synthesis
+14 Infos, 46 Warnings, 45 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 2536.457 ; gain = 942.996 ; free physical = 24351 ; free virtual = 27176
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1906.046; main = 1576.755; forked = 377.365
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4117.914; main = 2504.410; forked = 1613.504
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/vt5655/gitlab/advancedvlsi-25-26/task2/Task2/Task2.runs/synth_1/adder.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file adder_utilization_synth.rpt -pb adder_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  5 13:17:09 2025...

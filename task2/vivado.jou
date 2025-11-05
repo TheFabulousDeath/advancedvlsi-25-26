@@ -1,0 +1,83 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Nov  5 12:59:14 2025
+# Process ID: 3266
+# Current directory: /home/vt5655/gitlab/advancedvlsi-25-26/task2
+# Command line: vivado -mode tcl
+# Log file: /home/vt5655/gitlab/advancedvlsi-25-26/task2/vivado.log
+# Journal file: /home/vt5655/gitlab/advancedvlsi-25-26/task2/vivado.jou
+# Running On: o9020-jfd, OS: Linux, CPU Frequency: 3900.000 MHz, CPU Physical cores: 4, Host memory: 33609 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/vt5655/git/hiwiBlankenburg/visualizeNetlist/visualizeNetlist/visualizeNetlist.xpr
+close_project
+create_project Task2 /home/vt5655/gitlab/advancedvlsi-25-26/task2/Task2 -part xc7z020clg484-1
+set_property board_part avnet.com:zedboard:part0:1.4 [current_project]
+set_property target_language VHDL [current_project]
+add_files -norecurse {/home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/reg.vhd /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/program_counter_wrapper.vhd /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/adder.vhd /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/program_counter.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse /home/vt5655/gitlab/advancedvlsi-25-26/task2/constraints/constraints_zedboard.xdc
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {/home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/adder_tb.vhd /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/reg_tb.vhd /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/program_counter_tb.vhd}
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top adder [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top adder_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source adder_tb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top reg_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source reg_tb.tcl
+close_sim
+launch_simulation
+source reg_tb.tcl
+refresh_design
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top reg [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+refresh_design
+synth_design -top reg -part xc7z020clg484-1 -lint 
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top program_counter [current_fileset]
+set_property top_lib xil_defaultlib [current_fileset]
+set_property top_arch behav [current_fileset]
+set_property top_file /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/program_counter.vhd [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+refresh_design
+update_compile_order -fileset sources_1
+refresh_design
+refresh_design
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design
