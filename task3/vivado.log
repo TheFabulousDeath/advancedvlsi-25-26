@@ -1,0 +1,542 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Nov  6 11:59:48 2025
+# Process ID: 4620
+# Current directory: /home/vt5655/gitlab/advancedvlsi-25-26/task3
+# Command line: vivado
+# Log file: /home/vt5655/gitlab/advancedvlsi-25-26/task3/vivado.log
+# Journal file: /home/vt5655/gitlab/advancedvlsi-25-26/task3/vivado.jou
+# Running On: o9020-8fd, OS: Linux, CPU Frequency: 3900.000 MHz, CPU Physical cores: 4, Host memory: 33609 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /opt/Xilinx/Vivado/2023.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project Task3 /home/vt5655/gitlab/advancedvlsi-25-26/task3/Task3 -part xc7z020clg484-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2023.2/data/ip'.
+set_property board_part avnet.com:zedboard:part0:1.4 [current_project]
+set_property target_language VHDL [current_project]
+add_files -norecurse {/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd /home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu_tb.vhd
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7z020clg484-1
+Top: alu
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5386
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 8992.086 ; gain = 397.711 ; free physical = 25748 ; free virtual = 28577
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:19]
+WARNING: [Synth 8-3330] design alu has an empty top module
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9066.055 ; gain = 471.680 ; free physical = 25660 ; free virtual = 28491
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9080.898 ; gain = 486.523 ; free physical = 25648 ; free virtual = 28479
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9080.898 ; gain = 486.523 ; free physical = 25648 ; free virtual = 28479
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9080.906 ; gain = 0.000 ; free physical = 25648 ; free virtual = 28479
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9137.828 ; gain = 0.000 ; free physical = 25917 ; free virtual = 28748
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 9255.852 ; gain = 661.477 ; free physical = 25885 ; free virtual = 28727
+8 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 9255.852 ; gain = 969.973 ; free physical = 25885 ; free virtual = 28727
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2448.587; main = 2448.587; forked = 0.000
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 9255.820; main = 9255.820; forked = 0.000
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+ERROR: [Common 17-53] User Exception: Unable to open design. No Verilog or VHDL sources found in project
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 9434.746 ; gain = 49.871 ; free physical = 24939 ; free virtual = 27851
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-2716] syntax error near 'case' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:30]
+ERROR: [Synth 8-2716] syntax error near '=>' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:31]
+ERROR: [Synth 8-2716] syntax error near 'case' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:33]
+INFO: [Synth 8-11252] unit 'behav' is ignored due to previous errors [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:35]
+INFO: [Synth 8-10443] VHDL file '/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd' is ignored due to errors
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:7]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9517.715 ; gain = 132.840 ; free physical = 24845 ; free virtual = 27757
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+refresh_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 9541.723 ; gain = 156.848 ; free physical = 24823 ; free virtual = 27735
+ERROR: [Common 17-39] 'refresh_design' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 9604.746 ; gain = 0.000 ; free physical = 25142 ; free virtual = 28052
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+ERROR: [Synth 8-426] missing choice(s) 32'b00000000000000000000000000000001 to 4'b1111 in case statement [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:31]
+ERROR: [Synth 8-285] failed synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9604.746 ; gain = 0.000 ; free physical = 25155 ; free virtual = 28065
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+ERROR: [Common 17-39] 'refresh_design' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 9632.758 ; gain = 0.004 ; free physical = 25111 ; free virtual = 28050
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-3848] Net f_zero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-3848] Net f_ltzero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-7129] Port f_zero in module alu is either unconnected or has no load
+WARNING: [Synth 8-7129] Port f_ltzero in module alu is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 9632.758 ; gain = 0.004 ; free physical = 25110 ; free virtual = 28050
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 9632.758 ; gain = 0.004 ; free physical = 25111 ; free virtual = 28050
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 9632.758 ; gain = 0.004 ; free physical = 25111 ; free virtual = 28050
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 9633.754 ; gain = 0.000 ; free physical = 25109 ; free virtual = 28049
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 9648.766 ; gain = 26.012 ; free physical = 25052 ; free virtual = 28006
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 9648.766 ; gain = 0.000 ; free physical = 24771 ; free virtual = 27682
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-10557] cannot read from 'out' object 'c'; use 'buffer' or 'inout' instead [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:36]
+INFO: [Synth 8-11252] unit 'behav' is ignored due to previous errors [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:40]
+INFO: [Synth 8-10443] VHDL file '/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd' is ignored due to errors
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:7]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9648.766 ; gain = 0.000 ; free physical = 24745 ; free virtual = 27680
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+refresh_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 9648.766 ; gain = 0.000 ; free physical = 24745 ; free virtual = 27680
+ERROR: [Common 17-39] 'refresh_design' failed due to earlier errors.
+synth_design -top alu -part xc7z020clg484-1 -lint 
+Command: synth_design -top alu -part xc7z020clg484-1 -lint
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 9648.766 ; gain = 0.000 ; free physical = 25029 ; free virtual = 27953
+---------------------------------------------------------------------------------
+Clean up Linter database...
+ERROR: [Synth 8-10557] cannot read from 'out' object 'c'; use 'buffer' or 'inout' instead [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:36]
+INFO: [Synth 8-11252] unit 'behav' is ignored due to previous errors [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:40]
+INFO: [Synth 8-10443] VHDL file '/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd' is ignored due to errors
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:7]
+INFO: [Synth 8-256] done synthesizing module 'alu' (1#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:7]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9648.766 ; gain = 0.000 ; free physical = 25028 ; free virtual = 27952
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+7 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design completed successfully
+ERROR: [Common 17-39] 'synth_design' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 9743.582 ; gain = 0.000 ; free physical = 24159 ; free virtual = 27185
+---------------------------------------------------------------------------------
+Clean up Linter database...
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-3848] Net f_zero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-3848] Net f_ltzero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'alu' (1#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9743.582 ; gain = 0.000 ; free physical = 24162 ; free virtual = 27189
+---------------------------------------------------------------------------------
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu Nov  6 12:33:33 2025
+| Host         : o9020-8fd running 64-bit Rocky Linux release 8.10 (Green Obsidian)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+
+1. Summary
+----------
+
++----------+--------------+----------+
+| Rule ID  | # Violations | # Waived |
++----------+--------------+----------+
+| ASSIGN-9 | 2            | 0        |
++----------+--------------+----------+
+
+
+WARNING: [Synth 37-101] [ASSIGN-9]All bits in IO 'f_ltzero' are not set. First unset bit index is 0. 
+RTL Name 'f_ltzero', Hierarchy 'alu', File '/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd', Line 16.
+WARNING: [Synth 37-101] [ASSIGN-9]All bits in IO 'f_zero' are not set. First unset bit index is 0. 
+RTL Name 'f_zero', Hierarchy 'alu', File '/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd', Line 16.
+INFO: [Synth 37-85] Total of 2 linter message(s) generated.
+INFO: [Synth 37-45] Linter Run Finished!
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9765.582 ; gain = 0.000 ; free physical = 24145 ; free virtual = 27172
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 9808.473 ; gain = 64.891 ; free physical = 24119 ; free virtual = 27158
+set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY full [get_runs synth_1]
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 9834.484 ; gain = 0.000 ; free physical = 23352 ; free virtual = 26382
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-614] signal 'adder_output' is read in the process but is not in the sensitivity list [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-3848] Net f_zero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-3848] Net f_ltzero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9834.484 ; gain = 0.000 ; free physical = 23351 ; free virtual = 26382
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9837.445 ; gain = 2.961 ; free physical = 23351 ; free virtual = 26382
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9837.445 ; gain = 2.961 ; free physical = 23351 ; free virtual = 26382
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9843.445 ; gain = 0.000 ; free physical = 23689 ; free virtual = 26731
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 9870.461 ; gain = 35.977 ; free physical = 23721 ; free virtual = 26766
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 9870.461 ; gain = 0.000 ; free physical = 23487 ; free virtual = 26516
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-614] signal 'adder_output' is read in the process but is not in the sensitivity list [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-3848] Net f_zero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-3848] Net f_ltzero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 9870.461 ; gain = 0.000 ; free physical = 23485 ; free virtual = 26514
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 9870.461 ; gain = 0.000 ; free physical = 23485 ; free virtual = 26514
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 9870.461 ; gain = 0.000 ; free physical = 23485 ; free virtual = 26514
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9870.461 ; gain = 0.000 ; free physical = 23751 ; free virtual = 26791
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 9886.469 ; gain = 16.008 ; free physical = 23657 ; free virtual = 26708
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 9886.469 ; gain = 0.000 ; free physical = 23362 ; free virtual = 26401
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-3848] Net f_zero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-3848] Net f_ltzero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 9886.469 ; gain = 0.000 ; free physical = 23360 ; free virtual = 26399
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 9886.469 ; gain = 0.000 ; free physical = 23360 ; free virtual = 26399
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 9886.469 ; gain = 0.000 ; free physical = 23360 ; free virtual = 26399
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 9898.125 ; gain = 0.000 ; free physical = 23703 ; free virtual = 26754
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 9924.137 ; gain = 37.668 ; free physical = 23690 ; free virtual = 26753
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 9924.137 ; gain = 0.000 ; free physical = 23443 ; free virtual = 26471
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-3848] Net f_zero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-3848] Net f_ltzero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 9924.137 ; gain = 0.000 ; free physical = 23464 ; free virtual = 26492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 9924.137 ; gain = 0.000 ; free physical = 23458 ; free virtual = 26486
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 9924.137 ; gain = 0.000 ; free physical = 23458 ; free virtual = 26486
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 9924.137 ; gain = 0.000 ; free physical = 23691 ; free virtual = 26732
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 9943.141 ; gain = 19.004 ; free physical = 23675 ; free virtual = 26730
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 10096.211 ; gain = 0.000 ; free physical = 23363 ; free virtual = 26402
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-3848] Net f_zero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-3848] Net f_ltzero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10096.211 ; gain = 0.000 ; free physical = 23363 ; free virtual = 26402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10096.211 ; gain = 0.000 ; free physical = 23363 ; free virtual = 26402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10096.211 ; gain = 0.000 ; free physical = 23363 ; free virtual = 26402
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 10096.211 ; gain = 0.000 ; free physical = 23627 ; free virtual = 26679
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 10133.121 ; gain = 36.910 ; free physical = 23605 ; free virtual = 26671
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:]
+refresh_design
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 10149.137 ; gain = 0.000 ; free physical = 23054 ; free virtual = 26162
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:21]
+WARNING: [Synth 8-3848] Net f_zero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+WARNING: [Synth 8-3848] Net f_ltzero in module/entity alu does not have driver. [/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10149.137 ; gain = 0.000 ; free physical = 23053 ; free virtual = 26161
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10149.137 ; gain = 0.000 ; free physical = 23053 ; free virtual = 26161
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 10149.137 ; gain = 0.000 ; free physical = 23053 ; free virtual = 26161
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10149.137 ; gain = 0.000 ; free physical = 23314 ; free virtual = 26435
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+refresh_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 10174.141 ; gain = 25.004 ; free physical = 23302 ; free virtual = 26435
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  6 12:47:43 2025] Launched synth_1...
+Run output will be captured here: /home/vt5655/gitlab/advancedvlsi-25-26/task3/Task3/Task3.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10276.180 ; gain = 0.000 ; free physical = 23312 ; free virtual = 26447
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10276.180 ; gain = 0.000 ; free physical = 23310 ; free virtual = 26445
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+

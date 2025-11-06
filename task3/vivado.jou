@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Nov  6 11:59:48 2025
+# Process ID: 4620
+# Current directory: /home/vt5655/gitlab/advancedvlsi-25-26/task3
+# Command line: vivado
+# Log file: /home/vt5655/gitlab/advancedvlsi-25-26/task3/vivado.log
+# Journal file: /home/vt5655/gitlab/advancedvlsi-25-26/task3/vivado.jou
+# Running On: o9020-8fd, OS: Linux, CPU Frequency: 3900.000 MHz, CPU Physical cores: 4, Host memory: 33609 MB
+#-----------------------------------------------------------
+start_gui
+create_project Task3 /home/vt5655/gitlab/advancedvlsi-25-26/task3/Task3 -part xc7z020clg484-1
+set_property board_part avnet.com:zedboard:part0:1.4 [current_project]
+set_property target_language VHDL [current_project]
+add_files -norecurse {/home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd /home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu_tb.vhd
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+update_compile_order -fileset sources_1
+refresh_design
+update_compile_order -fileset sources_1
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+synth_design -top alu -part xc7z020clg484-1 -lint 
+refresh_design
+set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY full [get_runs synth_1]
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1

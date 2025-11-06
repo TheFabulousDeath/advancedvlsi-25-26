@@ -16,7 +16,7 @@ set rt::rc [catch {
     set rt::cmdEcho 0
     rt::set_parameter writeXmsg true
     rt::set_parameter enableParallelHelperSpawn true
-    set ::env(RT_TMP) "./.Xil/Vivado-3266-o9020-jfd/realtime/tmp"
+    set ::env(RT_TMP) "./.Xil/Vivado-4620-o9020-8fd/realtime/tmp"
     if { [ info exists ::env(RT_TMP) ] } {
       file delete -force $::env(RT_TMP)
       file mkdir $::env(RT_TMP)
@@ -41,14 +41,13 @@ set rt::rc [catch {
     set rt::useElabCache false
     if {$rt::useElabCache == false} {
       rt::read_vhdl -lib xil_defaultlib {
-      /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/adder.vhd
-      /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/reg.vhd
-      /home/vt5655/gitlab/advancedvlsi-25-26/task2/vhdl/program_counter.vhd
+      /home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/isa_riscv.vhd
+      /home/vt5655/gitlab/advancedvlsi-25-26/task3/vhdl/alu.vhd
     }
       rt::filesetChecksum
     }
     rt::set_parameter usePostFindUniquification false
-    set rt::top program_counter
+    set rt::top alu
     rt::set_parameter enableIncremental true
     rt::set_parameter markDebugPreservationLevel "enable"
     set rt::reportTiming false
@@ -68,7 +67,7 @@ set rt::rc [catch {
     rt::set_parameter webTalkPath {}
     rt::set_parameter synthDebugLog false
     rt::set_parameter printModuleName false
-    rt::set_parameter enableSplitFlowPath "./.Xil/Vivado-3266-o9020-jfd/"
+    rt::set_parameter enableSplitFlowPath "./.Xil/Vivado-4620-o9020-8fd/"
     set ok_to_delete_rt_tmp true 
     if { [rt::get_parameter parallelDebug] } { 
        set ok_to_delete_rt_tmp false 
