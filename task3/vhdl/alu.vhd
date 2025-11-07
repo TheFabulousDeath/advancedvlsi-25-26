@@ -6,7 +6,7 @@ use work.isa_riscv.ALL;
 
 entity alu is
     generic(
-        bits : integer := 8;
+        bits : integer := 32;
         op_width : integer := 4
     );
     port(
@@ -25,31 +25,69 @@ architecture behav of alu is
 	-- Define additional signals
 	-------------------------------
     
+    signal rsa_output, rsa_input : signed(bits - 1 downto 0);
+    signal rsa_shift : integer;
+    
 begin
+
+    -- ==== Right shift instantiation and signal assignment ====
+    rsa_instance : entity work.rsa_unit
+        generic map (bits => bits)
+        port map(input => rsa_input, shift => rsa_shift, result => rsa_output);
+    
+    rsa_input <= signed(a);
+    rsa_shift <= to_integer(unsigned(b));
+    
     alu_process : process(a,b,op)
+        variable result : std_logic_vector(bits - 1 downto 0);
     begin
-        c <= std_logic_vector(signed(a) + signed(b));
+        -- ==== Computation ====
+        -- Undefined behaviour leads to addition.
+        result := std_logic_vector(signed(a) + signed(b));
         case op is
             when work.isa_riscv.opcode_ADD =>
-                c <= std_logic_vector(signed(a) + signed(b));
+                result := std_logic_vector(signed(a) + signed(b));
             when work.isa_riscv.opcode_SUB =>
-                c <= std_logic_vector(signed(a) - signed(b));
+                result := std_logic_vector(signed(a) - signed(b));
             when work.isa_riscv.opcode_SLL =>
-                c <= std_logic_vector(unsigned(a) sll 1);
-            --when work.isa_riscv.opcode_SLT =>
-            --when work.isa_riscv.opcode_SLTU =>
+                result := std_logic_vector(unsigned(a) sll to_integer(unsigned(b)));
+            when work.isa_riscv.opcode_SLT =>
+                if signed(a) < signed(b) then
+                    result := (0 => '1', others => '0');
+                else 
+                    result := (others => '0');
+                end if;
+            when work.isa_riscv.opcode_SLTU =>
+                if unsigned(a) < unsigned(b) then
+                    result := (0 => '1', others => '0');
+                else 
+                    result := (others => '0');
+                end if;
             when work.isa_riscv.opcode_XOR =>
-                c <= a xor b;
+                result := a xor b;
             when work.isa_riscv.opcode_SRL =>
-                c <= std_logic_vector(unsigned(a) srl 1);
-            --when work.isa_riscv.opcode_SRA =>
-            --    c <= std_logic_vector(signed(a) sra 1);
+                result := std_logic_vector(unsigned(a) srl to_integer(unsigned(b)));
+            when work.isa_riscv.opcode_SRA =>
+                result := std_logic_vector(rsa_output);
             when work.isa_riscv.opcode_OR =>
-                c <= a or b;
+                result := a or b;
             when work.isa_riscv.opcode_AND =>
-                c <= a and b;
-            when others => -- Undefined behaviour leads to addition.
+                result := a and b;
+            when others =>
         end case;
+        
+        -- ==== Flags ====
+        f_zero <= '0';
+        f_ltzero <= '0';
+        if signed(result) = 0 then
+            f_zero <= '1';
+        elsif signed(result) < 0 then
+            f_ltzero <= '1';
+        end if;
+        
+        
+        
+        c <= result;
     end process;
     
 end behav;
