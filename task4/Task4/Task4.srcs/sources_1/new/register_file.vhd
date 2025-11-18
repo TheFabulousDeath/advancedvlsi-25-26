@@ -22,9 +22,12 @@ architecture Behavioral of register_file is
     
     signal reg_file : reg_file_type := (others => (others => '0'));
     
+    attribute ram_style : string;
+    attribute ram_style of reg_file : signal is "registers";
+    
 begin
 
-    idk_now : process(clk)
+    sequential_logic : process(clk)
     
     begin
         if rising_edge(clk) then
@@ -33,7 +36,7 @@ begin
             end if;
         end if;
     end process;
-    data_a <= reg_file(TO_INTEGER(unsigned(addr_a)));
+    data_a <= reg_file(TO_INTEGER(unsigned(addr_a))); -- This should be combinational for single cycle CPU -> turn into separate process.
     data_b <= reg_file(TO_INTEGER(unsigned(addr_b)));
 
 end Behavioral;
