@@ -49,6 +49,7 @@ begin
         end loop;
     
         wait;
+        wait;
     end process;
 
 end Behavioral;

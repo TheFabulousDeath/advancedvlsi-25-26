@@ -8,7 +8,7 @@ use work.misc.ALL;
 entity memory is
 	generic (
 		word_size : natural := 32;
-		mem_size : natural := 2**16
+		mem_size : natural := 2**10
 	);
 	port (
 		addr_write, addr_read : in std_logic_vector(log2(mem_size) - 1 downto 0);
