@@ -5,7 +5,8 @@ use IEEE.numeric_std.ALL;
 entity program_counter is
 
     generic(
-        bits : integer := 32
+        bits : integer := 32;
+        increment : STD_LOGIC_VECTOR := "100"
     );
     port(
         load, rst, clk : in std_logic;
@@ -18,41 +19,25 @@ end entity program_counter;
 
 architecture behav of program_counter is
     
-    signal q_to_adder, adder_to_d, pc_in_to_d, pc_reg_input : std_logic_vector(bits - 1 downto 0);
-    signal constant_one : std_logic_vector(bits - 1 downto 0) := (2 => '1', others => '0');
+    signal counter, adder_output : std_logic_vector(bits - 1 downto 0);
+    
     
 begin
-
-    adder : entity work.adder(behav)
-        generic map (bits => bits)
-        port map(
-            a => q_to_adder,
-            b => constant_one,
-            c => adder_to_d
-        );
-
-    pc_reg : entity work.reg(behav)
-        generic map (bits => bits)
-        port map(
-            d => adder_to_d,
-            q => q_to_adder,
-            clk => clk,
-            rst => rst
-        );
     
-    process(clk, rst)
+    sequential : process(clk)
     begin
-        pc_reg_input <= adder_to_d;
-        if rst = '1' then
-            pc_reg_input <= (others => '0');
-        end if;
+
         if rising_edge(clk) then
+            counter <= STD_LOGIC_VECTOR(unsigned(counter) + unsigned(increment));
             if load = '1' then
-                pc_reg_input <= pc_in_to_d;
+                counter <= pc_in;
+            end if;
+            if rst = '1' then
+                counter <= (others => '0');
             end if;
         end if;
     end process;
     
-    output <= adder_to_d;
+    output <= counter;
 end behav;
 

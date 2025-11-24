@@ -65,6 +65,9 @@ transcript
 
 .jobs
 
+### ignore all files in the runs
+**/*.runs/
+
 ### project synth
 */*.runs/synth*/*.xml
 */*.runs/synth*/*.txt

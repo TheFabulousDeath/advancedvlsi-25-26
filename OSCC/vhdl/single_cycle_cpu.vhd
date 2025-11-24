@@ -8,7 +8,12 @@ use work.instruction_ranges.ALL;
 
 entity sccpu is
     port(
-        rst, clk : in STD_LOGIC
+        rst, clk                        : in STD_LOGIC;
+        DEBUG_DATA_MEM_READ_DATA        : out STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+        DEBUG_INSTRUCTION_BUS           : out STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+        INSTRUCTION_MEMORY_WRITE_DATA   : in STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+        INSTRUCTION_MEMORY_WRITE_ADDR   : in STD_LOGIC_VECTOR(log2(INSTRUCTION_MEM_SIZE) - 1 downto 0);
+        INSTRUCTION_MEMORY_WRITE_ENABLE : in STD_LOGIC
     );
     
 end entity sccpu;
@@ -72,10 +77,10 @@ begin
         )
         port map(
             addr_read   => InstructionMemoryReadAddress(log2(INSTRUCTION_MEM_SIZE) - 1 downto 0),
-            addr_write  => (others => '0'),
-            write_en    => '0',
+            addr_write  => INSTRUCTION_MEMORY_WRITE_ADDR,
+            write_en    => INSTRUCTION_MEMORY_WRITE_ENABLE,
             clk         => clk,
-            data_write  => (others => '0'),
+            data_write  => INSTRUCTION_MEMORY_WRITE_DATA,
             data_read   => INSTRUCTION_BUS
         );
     
@@ -179,5 +184,8 @@ begin
             Branch_Taken <= '1';
         end if;
     end process;
+    
+    DEBUG_DATA_MEM_READ_DATA <= DataMemoryReadData;
+    DEBUG_INSTRUCTION_BUS <= INSTRUCTION_BUS;
 end behav;
 
