@@ -3,7 +3,10 @@ use IEEE.std_logic_1164.ALL;
 use IEEE.numeric_std.ALL;
 
 use work.misc.ALL;
--- TODO include your package
+use work.register_aliases.ALL;
+use work.funct7.ALL;
+use work.funct3.ALL;
+use work.opcodes.ALL;
 
 entity memory is
 	generic (
@@ -51,6 +54,10 @@ architecture distributed of memory is
     attribute ram_style of RAM : signal is "distributed";
 
 begin
+
+        -- First instruction:
+    RAM(0) <= F7_ADD & x0 & x0 & F3_ADD & x0 & OP_REG_REG;
+    RAM(1) <= F7_ADD & x0 & x0 & F3_ADD & x0 & OP_REG_REG;
  
     sequential_logic : process(clk)
     begin
