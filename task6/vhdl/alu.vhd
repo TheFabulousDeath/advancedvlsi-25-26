@@ -21,17 +21,17 @@ end entity alu;
 architecture behav of alu is
 
     signal rsa_output, rsa_input : signed(bits - 1 downto 0);
-    signal rsa_shift : integer;
+    signal rsa_shift : integer := 0;
     
 begin
 
     -- ==== Right shift instantiation and signal assignment ====
-    rsa_instance : entity work.rsa_unit
-        generic map (bits => bits)
-        port map(input => rsa_input, shift => rsa_shift, result => rsa_output);
+    --rsa_instance : entity work.rsa_unit
+        --generic map (bits => bits)
+        --port map(input => rsa_input, shift => rsa_shift, result => rsa_output);
     
-    rsa_input <= signed(a);
-    rsa_shift <= to_integer(unsigned(b));
+    --rsa_input <= signed(a);
+    --rsa_shift <= to_integer(unsigned(b));
     
     alu_process : process(a,b,op)
         variable result : std_logic_vector(bits - 1 downto 0);
@@ -63,7 +63,7 @@ begin
             when ALUOp_SRL =>
                 result := std_logic_vector(unsigned(a) srl to_integer(unsigned(b)));
             when ALUOp_SRA =>
-                result := std_logic_vector(rsa_output);
+                --result := std_logic_vector(rsa_output);
             when ALUOp_OR =>
                 result := a or b;
             when ALUOp_AND =>

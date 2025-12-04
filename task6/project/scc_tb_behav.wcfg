@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="scc_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alu_control" />
+            <top_module name="cpu_constants" />
+            <top_module name="funct3" />
+            <top_module name="funct7" />
+            <top_module name="instruction_ranges" />
+            <top_module name="misc" />
+            <top_module name="opcodes" />
+            <top_module name="register_aliases" />
+            <top_module name="scc_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="20.271 ns"></ZoomEndTime>
+      <Cursor1Time time="15.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="952"></NameColumnWidth>
+      <ValueColumnWidth column_width="149"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="74" />
+   <wvobject fp_name="/scc_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/HALT_PC" type="logic">
+      <obj_property name="ElementShortName">HALT_PC</obj_property>
+      <obj_property name="ObjectShortName">HALT_PC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/INSTRUCTION_MEMORY_WRITE_DATA" type="array">
+      <obj_property name="ElementShortName">INSTRUCTION_MEMORY_WRITE_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_MEMORY_WRITE_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/INSTRUCTION_MEMORY_WRITE_ADDR" type="array">
+      <obj_property name="ElementShortName">INSTRUCTION_MEMORY_WRITE_ADDR[10:0]</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_MEMORY_WRITE_ADDR[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/INSTRUCTION_MEMORY_WRITE_ENABLE" type="logic">
+      <obj_property name="ElementShortName">INSTRUCTION_MEMORY_WRITE_ENABLE</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_MEMORY_WRITE_ENABLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/clk_period" type="other">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider1202">
+      <obj_property name="label">UUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/INSTRUCTION_MEMORY_WRITE_DATA" type="array">
+      <obj_property name="ElementShortName">INSTRUCTION_MEMORY_WRITE_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_MEMORY_WRITE_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/INSTRUCTION_MEMORY_WRITE_ADDR" type="array">
+      <obj_property name="ElementShortName">INSTRUCTION_MEMORY_WRITE_ADDR[10:0]</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_MEMORY_WRITE_ADDR[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/INSTRUCTION_MEMORY_WRITE_ENABLE" type="logic">
+      <obj_property name="ElementShortName">INSTRUCTION_MEMORY_WRITE_ENABLE</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_MEMORY_WRITE_ENABLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/HALT_PC" type="logic">
+      <obj_property name="ElementShortName">HALT_PC</obj_property>
+      <obj_property name="ObjectShortName">HALT_PC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/JUMP_ADDRESS" type="array">
+      <obj_property name="ElementShortName">JUMP_ADDRESS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">JUMP_ADDRESS[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/IMMEDIATE" type="array">
+      <obj_property name="ElementShortName">IMMEDIATE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMMEDIATE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/LOAD_COUNTER" type="logic">
+      <obj_property name="ElementShortName">LOAD_COUNTER</obj_property>
+      <obj_property name="ObjectShortName">LOAD_COUNTER</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/InstructionMemoryReadAddress" type="array">
+      <obj_property name="ElementShortName">InstructionMemoryReadAddress[31:0]</obj_property>
+      <obj_property name="ObjectShortName">InstructionMemoryReadAddress[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/INSTRUCTION_BUS" type="array">
+      <obj_property name="ElementShortName">INSTRUCTION_BUS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">INSTRUCTION_BUS[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/CTRL_ALUSrc" type="logic">
+      <obj_property name="ElementShortName">CTRL_ALUSrc</obj_property>
+      <obj_property name="ObjectShortName">CTRL_ALUSrc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/CTRL_MemtoReg" type="logic">
+      <obj_property name="ElementShortName">CTRL_MemtoReg</obj_property>
+      <obj_property name="ObjectShortName">CTRL_MemtoReg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/CTRL_RegWrite" type="logic">
+      <obj_property name="ElementShortName">CTRL_RegWrite</obj_property>
+      <obj_property name="ObjectShortName">CTRL_RegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/CTRL_MemRead" type="logic">
+      <obj_property name="ElementShortName">CTRL_MemRead</obj_property>
+      <obj_property name="ObjectShortName">CTRL_MemRead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/CTRL_MemWrite" type="logic">
+      <obj_property name="ElementShortName">CTRL_MemWrite</obj_property>
+      <obj_property name="ObjectShortName">CTRL_MemWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/CTRL_BRANCH" type="logic">
+      <obj_property name="ElementShortName">CTRL_BRANCH</obj_property>
+      <obj_property name="ObjectShortName">CTRL_BRANCH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/CTRL_ALUOP" type="array">
+      <obj_property name="ElementShortName">CTRL_ALUOP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">CTRL_ALUOP[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/Branch_Taken" type="logic">
+      <obj_property name="ElementShortName">Branch_Taken</obj_property>
+      <obj_property name="ObjectShortName">Branch_Taken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/REGISTER1_DATA" type="array">
+      <obj_property name="ElementShortName">REGISTER1_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REGISTER1_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/REGISTER2_DATA" type="array">
+      <obj_property name="ElementShortName">REGISTER2_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REGISTER2_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/REGISTER_WRITE_DATA" type="array">
+      <obj_property name="ElementShortName">REGISTER_WRITE_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REGISTER_WRITE_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/ALU_OPCODE" type="array">
+      <obj_property name="ElementShortName">ALU_OPCODE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_OPCODE[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/ALU_A" type="array">
+      <obj_property name="ElementShortName">ALU_A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_A[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/ALU_B" type="array">
+      <obj_property name="ElementShortName">ALU_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_B[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/ALU_C" type="array">
+      <obj_property name="ElementShortName">ALU_C[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_C[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/ZERO_FLAG" type="logic">
+      <obj_property name="ElementShortName">ZERO_FLAG</obj_property>
+      <obj_property name="ObjectShortName">ZERO_FLAG</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/LTZERO_FLAG" type="logic">
+      <obj_property name="ElementShortName">LTZERO_FLAG</obj_property>
+      <obj_property name="ObjectShortName">LTZERO_FLAG</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/DataMemoryAddress" type="array">
+      <obj_property name="ElementShortName">DataMemoryAddress[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DataMemoryAddress[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/DataMemoryWriteData" type="array">
+      <obj_property name="ElementShortName">DataMemoryWriteData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DataMemoryWriteData[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/DataMemoryReadData" type="array">
+      <obj_property name="ElementShortName">DataMemoryReadData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DataMemoryReadData[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/addr_write" type="array">
+      <obj_property name="ElementShortName">addr_write[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_write[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/addr_read" type="array">
+      <obj_property name="ElementShortName">addr_read[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_read[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/write_en" type="logic">
+      <obj_property name="ElementShortName">write_en</obj_property>
+      <obj_property name="ObjectShortName">write_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/data_write" type="array">
+      <obj_property name="ElementShortName">data_write[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_write[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/data_read" type="array">
+      <obj_property name="ElementShortName">data_read[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_read[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:2047][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:2047][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/word_size" type="other">
+      <obj_property name="ElementShortName">word_size</obj_property>
+      <obj_property name="ObjectShortName">word_size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/instruction_memory/mem_size" type="other">
+      <obj_property name="ElementShortName">mem_size</obj_property>
+      <obj_property name="ObjectShortName">mem_size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/OPCODE" type="array">
+      <obj_property name="ElementShortName">OPCODE[6:0]</obj_property>
+      <obj_property name="ObjectShortName">OPCODE[6:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/ALUSrc" type="logic">
+      <obj_property name="ElementShortName">ALUSrc</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/MemtoReg" type="logic">
+      <obj_property name="ElementShortName">MemtoReg</obj_property>
+      <obj_property name="ObjectShortName">MemtoReg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/RegWrite" type="logic">
+      <obj_property name="ElementShortName">RegWrite</obj_property>
+      <obj_property name="ObjectShortName">RegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/MemRead" type="logic">
+      <obj_property name="ElementShortName">MemRead</obj_property>
+      <obj_property name="ObjectShortName">MemRead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/MemWrite" type="logic">
+      <obj_property name="ElementShortName">MemWrite</obj_property>
+      <obj_property name="ObjectShortName">MemWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/Branch" type="logic">
+      <obj_property name="ElementShortName">Branch</obj_property>
+      <obj_property name="ObjectShortName">Branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/ALUOp" type="array">
+      <obj_property name="ElementShortName">ALUOp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/ALUOp1" type="logic">
+      <obj_property name="ElementShortName">ALUOp1</obj_property>
+      <obj_property name="ObjectShortName">ALUOp1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/ALUOp0" type="logic">
+      <obj_property name="ElementShortName">ALUOp0</obj_property>
+      <obj_property name="ObjectShortName">ALUOp0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/main_controller/number_of_control_outputs" type="other">
+      <obj_property name="ElementShortName">number_of_control_outputs</obj_property>
+      <obj_property name="ObjectShortName">number_of_control_outputs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/addr_a" type="array">
+      <obj_property name="ElementShortName">addr_a[4:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_a[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/addr_b" type="array">
+      <obj_property name="ElementShortName">addr_b[4:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_b[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/addr_c" type="array">
+      <obj_property name="ElementShortName">addr_c[4:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_c[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/data_a" type="array">
+      <obj_property name="ElementShortName">data_a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/data_b" type="array">
+      <obj_property name="ElementShortName">data_b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_b[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/data_c" type="array">
+      <obj_property name="ElementShortName">data_c[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_c[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/w_en" type="logic">
+      <obj_property name="ElementShortName">w_en</obj_property>
+      <obj_property name="ObjectShortName">w_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/reg_file" type="array">
+      <obj_property name="ElementShortName">reg_file[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_file[0:31][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/word_size" type="other">
+      <obj_property name="ElementShortName">word_size</obj_property>
+      <obj_property name="ObjectShortName">word_size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/register_File/size" type="other">
+      <obj_property name="ElementShortName">size</obj_property>
+      <obj_property name="ObjectShortName">size</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/alu_controller/Instruction" type="array">
+      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/alu_controller/CTRL_ALU_OP" type="array">
+      <obj_property name="ElementShortName">CTRL_ALU_OP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">CTRL_ALU_OP[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/alu_controller/ALU_OPCODE" type="array">
+      <obj_property name="ElementShortName">ALU_OPCODE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_OPCODE[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/alu_controller/funct7" type="array">
+      <obj_property name="ElementShortName">funct7[31:25]</obj_property>
+      <obj_property name="ObjectShortName">funct7[31:25]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scc_tb/uut/alu_controller/funct3" type="array">
+      <obj_property name="ElementShortName">funct3[14:12]</obj_property>
+      <obj_property name="ObjectShortName">funct3[14:12]</obj_property>
+   </wvobject>
+</wave_config>

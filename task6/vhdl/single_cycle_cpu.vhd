@@ -9,12 +9,11 @@ use work.instruction_ranges.ALL;
 entity sccpu is
     port(
         rst, clk                        : in	STD_LOGIC;
-        DEBUG_DATA_MEM_READ_DATA        : out	STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
-        DEBUG_INSTRUCTION_BUS           : out	STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+        --DEBUG_DATA_MEM_READ_DATA        : out	STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+        --DEBUG_INSTRUCTION_BUS           : out	STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
         INSTRUCTION_MEMORY_WRITE_DATA   : in	STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
         INSTRUCTION_MEMORY_WRITE_ADDR   : in	STD_LOGIC_VECTOR(log2(INSTRUCTION_MEM_SIZE) - 1 downto 0);
         INSTRUCTION_MEMORY_WRITE_ENABLE : in	STD_LOGIC;
-        INSTRUCTION_MEMORY_CLOCK        : in	STD_LOGIC;
 		HALT_PC							: in	STD_LOGIC
     );
     
@@ -38,10 +37,10 @@ architecture behav of sccpu is
 	signal JUMP_ADDRESS						: STD_LOGIC_VECTOR(COUNTER_RANGE);
     signal IMMEDIATE                		: STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
     signal LOAD_COUNTER						: STD_LOGIC;
-
-    signal InstructionMemoryReadAddress     : STD_LOGIC_VECTOR(COUNTER_RANGE);
+    signal COUNTER                          : STD_LOGIC_VECTOR(COUNTER_RANGE);
+    signal InstructionMemoryReadAddress     : STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
     
-    signal INSTRUCTION_BUS                  : STD_LOGIC_VECTOR(INSTRUCTION_RANGE);
+    signal INSTRUCTION_BUS                  : STD_LOGIC_VECTOR(INSTRUCTION_RANGE) := NOP;
 
     signal CTRL_ALUSrc, CTRL_MemtoReg, CTRL_RegWrite, CTRL_MemRead, CTRL_MemWrite, CTRL_BRANCH : STD_LOGIC;
     signal CTRL_ALUOP                       : STD_LOGIC_VECTOR(1 downto 0);
@@ -62,7 +61,7 @@ architecture behav of sccpu is
     
 begin
     
-    counter : entity work.program_counter(behav)
+    program_counter : entity work.program_counter(behav)
         generic map(
             bits => ARCHITECTURE_WIDTH
         )
@@ -71,7 +70,7 @@ begin
             rst         => rst,
             clk         => clk,
             pc_in       => JUMP_ADDRESS,
-            output      => InstructionMemoryReadAddress
+            output      => COUNTER
         );
     
 	HALT_MUX : process(HALT_PC, IMMEDIATE)
@@ -82,29 +81,33 @@ begin
 		end if;
 	end process;
     
-	LOAD_COUNTER_MUX : process(Branch_Taken)
+	LOAD_COUNTER_MUX : process(HALT_PC, Branch_Taken)
 	begin
 		LOAD_COUNTER <= Branch_Taken;
 		if HALT_PC = '1' then
 			LOAD_COUNTER <= '1';
 		end if;
 	end process;
-
+    
     instruction_memory : entity work.memory(distributed)
         generic map(
-            word_size   => ARCHITECTURE_WIDTH,
+            word_size   => ARCHITECTURE_WIDTH/8,
             mem_size    => INSTRUCTION_MEM_SIZE
         )
         port map(
             addr_read   => InstructionMemoryReadAddress(log2(INSTRUCTION_MEM_SIZE) - 1 downto 0),
             addr_write  => INSTRUCTION_MEMORY_WRITE_ADDR,
             write_en    => INSTRUCTION_MEMORY_WRITE_ENABLE,
-            clk         => INSTRUCTION_MEMORY_CLOCK,
+            clk         => clk,
             data_write  => INSTRUCTION_MEMORY_WRITE_DATA,
             data_read   => INSTRUCTION_BUS
         );
     
-    
+    IM_READ_ADDRESS_SOURCE_MUX : process(HALT_PC, COUNTER)
+    begin
+        InstructionMemoryReadAddress <= COUNTER; -- #TODO Probably doesn't need a mux.
+    end process;
+     
     main_controller : entity work.Control
         port map(
             OPCODE      => INSTRUCTION_BUS(6 downto 0),
@@ -170,7 +173,7 @@ begin
     
     data_memory : entity work.memory(distributed)
         generic map(
-            word_size   => ARCHITECTURE_WIDTH,
+            word_size   => ARCHITECTURE_WIDTH/8,
             mem_size    => DATA_MEM_SIZE
         )
         port map(
@@ -181,9 +184,9 @@ begin
             data_write  => REGISTER2_DATA,
             data_read   => DataMemoryReadData
         );
-        DataMemoryAddress <= ALU_C;
-
-
+    DataMemoryAddress <= ALU_C;
+    DataMemoryWriteData <= REGISTER2_DATA;
+    
     DATA_MEM_OUT_MUX : process(CTRL_MemtoReg, DataMemoryReadData, ALU_C)
         begin
             REGISTER_WRITE_DATA <= ALU_C;
@@ -210,7 +213,7 @@ begin
     end process;
     
     
-    DEBUG_DATA_MEM_READ_DATA <= DataMemoryReadData;
-    DEBUG_INSTRUCTION_BUS <= INSTRUCTION_BUS;
+    --DEBUG_DATA_MEM_READ_DATA <= DataMemoryReadData;
+    --DEBUG_INSTRUCTION_BUS <= INSTRUCTION_BUS;
 end behav;
 

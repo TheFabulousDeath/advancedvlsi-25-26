@@ -36,7 +36,10 @@ begin
             end if;
         end if;
     end process;
-    data_a <= reg_file(TO_INTEGER(unsigned(addr_a))); -- This should be combinational for single cycle CPU -> turn into separate process.
-    data_b <= reg_file(TO_INTEGER(unsigned(addr_b)));
-
+    
+    combinational_process : process (addr_a, addr_b, reg_file)
+    begin
+        data_a <= reg_file(TO_INTEGER(unsigned(addr_a)));
+        data_b <= reg_file(TO_INTEGER(unsigned(addr_b)));
+    end process;
 end Behavioral;

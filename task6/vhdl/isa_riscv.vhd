@@ -28,7 +28,18 @@ package instruction_ranges is
     subtype I_IMMEDIATE_RANGE       is integer range 31 downto 20;
     subtype J_IMMEDIATE_RANGE       is integer range 31 downto 12;
     subtype OPCODE_RANGE            is integer range 6 downto 0;
-
+    
+    -- Width constants
+    constant INSTRUCTION_WIDTH  : natural := INSTRUCTION_RANGE'high - INSTRUCTION_RANGE'low + 1;
+    constant FUNCT7_WIDTH       : natural := FUNCT7_RANGE'high - FUNCT7_RANGE'low + 1;
+    constant RS2_WIDTH          : natural := RS2_RANGE'high - RS2_RANGE'low + 1;
+    constant RS1_WIDTH          : natural := RS1_RANGE'high - RS1_RANGE'low + 1;
+    constant FUNCT3_WIDTH       : natural := FUNCT3_RANGE'high - FUNCT3_RANGE'low + 1;
+    constant RD_WIDTH           : natural := RD_RANGE'high - RD_RANGE'low + 1;
+    constant I_IMMEDIATE_WIDTH        : natural := I_IMMEDIATE_RANGE'high - I_IMMEDIATE_RANGE'low + 1;
+    constant J_IMMEDIATE_WIDTH        : natural := J_IMMEDIATE_RANGE'high - J_IMMEDIATE_RANGE'low + 1;
+    constant OPCODE_WIDTH       : natural := OPCODE_RANGE'high - OPCODE_RANGE'low + 1; 
+    
     -- #TODO : Add function to write S type immediates.
 end instruction_ranges;
 
@@ -104,39 +115,72 @@ use IEEE.std_logic_1164.ALL;
 
 package register_aliases is
 	
-	constant x0  : std_logic_vector(4 downto 0) := "00000";  -- x0 / zero
-	constant x1  : std_logic_vector(4 downto 0) := "00001";  -- x1 / ra (return address)
-	constant x2  : std_logic_vector(4 downto 0) := "00010";  -- x2 / sp (stack pointer)
-	constant x3  : std_logic_vector(4 downto 0) := "00011";  -- x3 / gp (global pointer)
-	constant x4  : std_logic_vector(4 downto 0) := "00100";  -- x4 / tp (thread pointer)
-	constant x5  : std_logic_vector(4 downto 0) := "00101";  -- x5 / t0 (temporary)
-	constant x6  : std_logic_vector(4 downto 0) := "00110";  -- x6 / t1 (temporary)
-	constant x7  : std_logic_vector(4 downto 0) := "00111";  -- x7 / t2 (temporary)
-	constant x8  : std_logic_vector(4 downto 0) := "01000";  -- x8 / s0 (saved)
-	constant x9  : std_logic_vector(4 downto 0) := "01001";  -- x9 / s1 (saved)
-	constant x10 : std_logic_vector(4 downto 0) := "01010";  -- x10 / a0 (argument/return)
-	constant x11 : std_logic_vector(4 downto 0) := "01011";  -- x11 / a1 (argument/return)
-	constant x12 : std_logic_vector(4 downto 0) := "01100";  -- x12 / a2 (argument)
-	constant x13 : std_logic_vector(4 downto 0) := "01101";  -- x13 / a3 (argument)
-	constant x14 : std_logic_vector(4 downto 0) := "01110";  -- x14 / a4 (argument)
-	constant x15 : std_logic_vector(4 downto 0) := "01111";  -- x15 / a5 (argument)
-	constant x16 : std_logic_vector(4 downto 0) := "10000";  -- x16 / a6 (argument)
-	constant x17 : std_logic_vector(4 downto 0) := "10001";  -- x17 / a7 (argument)
-	constant x18 : std_logic_vector(4 downto 0) := "10010";  -- x18 / s2 (saved)
-	constant x19 : std_logic_vector(4 downto 0) := "10011";  -- x19 / s3 (saved)
-	constant x20 : std_logic_vector(4 downto 0) := "10100";  -- x20 / s4 (saved)
-	constant x21 : std_logic_vector(4 downto 0) := "10101";  -- x21 / s5 (saved)
-	constant x22 : std_logic_vector(4 downto 0) := "10110";  -- x22 / s6 (saved)
-	constant x23 : std_logic_vector(4 downto 0) := "10111";  -- x23 / s7 (saved)
-	constant x24 : std_logic_vector(4 downto 0) := "11000";  -- x24 / s8 (saved)
-	constant x25 : std_logic_vector(4 downto 0) := "11001";  -- x25 / s9 (saved)
-	constant x26 : std_logic_vector(4 downto 0) := "11010";  -- x26 / s10 (saved)
-	constant x27 : std_logic_vector(4 downto 0) := "11011";  -- x27 / s11 (saved)
-	constant x28 : std_logic_vector(4 downto 0) := "11100";  -- x28 / t3 (temporary)
-	constant x29 : std_logic_vector(4 downto 0) := "11101";  -- x29 / t4 (temporary)
-	constant x30 : std_logic_vector(4 downto 0) := "11110";  -- x30 / t5 (temporary)
-	constant x31 : std_logic_vector(4 downto 0) := "11111";  -- x31 / t6 (temporary)
+	constant x0     : std_logic_vector(4 downto 0) := "00000";  -- x0 / zero
+	constant x1     : std_logic_vector(4 downto 0) := "00001";  -- x1 / ra (return address)
+	constant x2     : std_logic_vector(4 downto 0) := "00010";  -- x2 / sp (stack pointer)
+	constant x3     : std_logic_vector(4 downto 0) := "00011";  -- x3 / gp (global pointer)
+	constant x4     : std_logic_vector(4 downto 0) := "00100";  -- x4 / tp (thread pointer)
+	constant x5     : std_logic_vector(4 downto 0) := "00101";  -- x5 / t0 (temporary)
+	constant x6     : std_logic_vector(4 downto 0) := "00110";  -- x6 / t1 (temporary)
+	constant x7     : std_logic_vector(4 downto 0) := "00111";  -- x7 / t2 (temporary)
+	constant x8     : std_logic_vector(4 downto 0) := "01000";  -- x8 / s0 (saved)
+	constant x9     : std_logic_vector(4 downto 0) := "01001";  -- x9 / s1 (saved)
+	constant x10    : std_logic_vector(4 downto 0) := "01010";  -- x10 / a0 (argument/return)
+	constant x11    : std_logic_vector(4 downto 0) := "01011";  -- x11 / a1 (argument/return)
+	constant x12    : std_logic_vector(4 downto 0) := "01100";  -- x12 / a2 (argument)
+	constant x13    : std_logic_vector(4 downto 0) := "01101";  -- x13 / a3 (argument)
+	constant x14    : std_logic_vector(4 downto 0) := "01110";  -- x14 / a4 (argument)
+	constant x15    : std_logic_vector(4 downto 0) := "01111";  -- x15 / a5 (argument)
+	constant x16    : std_logic_vector(4 downto 0) := "10000";  -- x16 / a6 (argument)
+	constant x17    : std_logic_vector(4 downto 0) := "10001";  -- x17 / a7 (argument)
+	constant x18    : std_logic_vector(4 downto 0) := "10010";  -- x18 / s2 (saved)
+	constant x19    : std_logic_vector(4 downto 0) := "10011";  -- x19 / s3 (saved)
+	constant x20    : std_logic_vector(4 downto 0) := "10100";  -- x20 / s4 (saved)
+	constant x21    : std_logic_vector(4 downto 0) := "10101";  -- x21 / s5 (saved)
+	constant x22    : std_logic_vector(4 downto 0) := "10110";  -- x22 / s6 (saved)
+	constant x23    : std_logic_vector(4 downto 0) := "10111";  -- x23 / s7 (saved)
+	constant x24    : std_logic_vector(4 downto 0) := "11000";  -- x24 / s8 (saved)
+	constant x25    : std_logic_vector(4 downto 0) := "11001";  -- x25 / s9 (saved)
+	constant x26    : std_logic_vector(4 downto 0) := "11010";  -- x26 / s10 (saved)
+	constant x27    : std_logic_vector(4 downto 0) := "11011";  -- x27 / s11 (saved)
+	constant x28    : std_logic_vector(4 downto 0) := "11100";  -- x28 / t3 (temporary)
+	constant x29    : std_logic_vector(4 downto 0) := "11101";  -- x29 / t4 (temporary)
+	constant x30    : std_logic_vector(4 downto 0) := "11110";  -- x30 / t5 (temporary)
+	constant x31    : std_logic_vector(4 downto 0) := "11111";  -- x31 / t6 (temporary)
 	
+    alias zero      : std_logic_vector(4 downto 0) is x0;
+    alias ra        : std_logic_vector(4 downto 0) is x1;
+    alias sp        : std_logic_vector(4 downto 0) is x2;
+    alias gp        : std_logic_vector(4 downto 0) is x3;
+    alias tp        : std_logic_vector(4 downto 0) is x4;
+    alias t0        : std_logic_vector(4 downto 0) is x5;
+    alias t1        : std_logic_vector(4 downto 0) is x6;
+    alias t2        : std_logic_vector(4 downto 0) is x7;
+    alias s0        : std_logic_vector(4 downto 0) is x8;
+    alias s1        : std_logic_vector(4 downto 0) is x9;
+    alias a0        : std_logic_vector(4 downto 0) is x10;
+    alias a1        : std_logic_vector(4 downto 0) is x11;
+    alias a2        : std_logic_vector(4 downto 0) is x12;
+    alias a3        : std_logic_vector(4 downto 0) is x13;
+    alias a4        : std_logic_vector(4 downto 0) is x14;
+    alias a5        : std_logic_vector(4 downto 0) is x15;
+    alias a6        : std_logic_vector(4 downto 0) is x16;
+    alias a7        : std_logic_vector(4 downto 0) is x17;
+    alias s2        : std_logic_vector(4 downto 0) is x18;
+    alias s3        : std_logic_vector(4 downto 0) is x19;
+    alias s4        : std_logic_vector(4 downto 0) is x20;
+    alias s5        : std_logic_vector(4 downto 0) is x21;
+    alias s6        : std_logic_vector(4 downto 0) is x22;
+    alias s7        : std_logic_vector(4 downto 0) is x23;
+    alias s8        : std_logic_vector(4 downto 0) is x24;
+    alias s9        : std_logic_vector(4 downto 0) is x25;
+    alias s10       : std_logic_vector(4 downto 0) is x26;
+    alias s11       : std_logic_vector(4 downto 0) is x27;
+    alias t3        : std_logic_vector(4 downto 0) is x28;
+    alias t4        : std_logic_vector(4 downto 0) is x29;
+    alias t5        : std_logic_vector(4 downto 0) is x30;
+    alias t6        : std_logic_vector(4 downto 0) is x31;
+
 end register_aliases;
 
 library IEEE;
@@ -171,16 +215,24 @@ end opcodes;
 
 library IEEE;
 use IEEE.std_logic_1164.ALL;
+use IEEE.numeric_std.ALL;
+use work.opcodes.ALL;
+use work.register_aliases.ALL;
+use work.instruction_ranges.ALL;
+use work.funct3.ALL;
 
 package cpu_constants is
-
+    
+    
 	constant ARCHITECTURE_WIDTH             : natural := 32;
-	constant INSTRUCTION_MEM_SIZE           : natural := 2**8;
-	constant DATA_MEM_SIZE                  : natural := 2**10;
+	constant INSTRUCTION_MEM_SIZE           : natural := 2**11;
+	constant DATA_MEM_SIZE                  : natural := 2**13;
     constant REG_FILE_SIZE                  : natural := 32;
     subtype COUNTER_RANGE                   is integer range 31 downto 0;
 	subtype REGISTER_WORD_RANGE			    is integer range 31 downto 0;
     subtype ARCHITECTURE_RANGE              is integer range ARCHITECTURE_WIDTH - 1 downto 0;
     subtype ALU_OPCODE_RANGE                is integer range 3 downto 0;
     subtype CTRL_ALU_OP_RANGE               is integer range 1 downto 0;
+    
+    constant NOP                            : STD_LOGIC_VECTOR(ARCHITECTURE_RANGE) := STD_LOGIC_VECTOR(to_signed(0, I_IMMEDIATE_WIDTH)) & x0 & F3_ADDI & x0 & OP_REG_IMM;
 end cpu_constants;

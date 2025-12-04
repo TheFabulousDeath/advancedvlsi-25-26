@@ -30,16 +30,18 @@ begin
         ALUOp <= ALUOp0 & ALUOp1;
         -- TODO: IMPLEMENT J TYPE DATA PATH
         case OPCODE is
+            when OP_REG_IMM =>
+                output_vector := "01000101";
             when OP_LOAD =>
-                output_vector := "11110000";
+                output_vector := "00001111";
             when OP_STORE =>
-                output_vector := "10001000"; -- TODO, check if MemtoReg being 0 is a problem 1X001000.
+                output_vector := "00010001"; -- TODO, check if MemtoReg being 0 is a problem 1X001000.
             when OP_BRANCH =>
-                output_vector := "00000101"; -- TODO, check if MemtoReg being 0 is a problem 0X000101.
+                output_vector := "10100000"; -- TODO, check if MemtoReg being 0 is a problem 0X000101.
             when OP_REG_REG =>
-                output_vector := "00100010";
+                output_vector := "01000100";
             when others =>
-                output_vector := "00100010"; -- Default is R-Format
+                output_vector := "01000100"; -- Default is R-Format
         end case;
         
         ALUSrc <= output_vector(0);
@@ -48,8 +50,8 @@ begin
         MemRead <= output_vector(3);
         MemWrite <= output_vector(4);
         Branch <= output_vector(5);
-        AluOp1 <= output_vector(6);
-        AluOp0 <= output_vector(7);
+        AluOp1 <= output_vector(7);
+        AluOp0 <= output_vector(6);
         
         
     end process;
