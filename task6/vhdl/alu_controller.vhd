@@ -41,8 +41,7 @@ begin
                 case funct7 & funct3 is
 
                     -- ADD / ADDI
-                    when (F7_ADD & F3_ADD)  |
-                        (F7_ADD & F3_ADDI) =>
+                    when (F7_ADD & F3_ADD) =>
                         ALU_OPCODE <= ALUOp_ADD;
 
                     -- SUB
@@ -50,43 +49,35 @@ begin
                         ALU_OPCODE <= ALUOp_SUB;
 
                     -- SLL / SLLI
-                    when (F7_SLL & F3_SLL)   |
-                        (F7_SLLI & F3_SLLI) =>
+                    when (F7_SLL & F3_SLL) =>
                         ALU_OPCODE <= ALUOp_SLL;
 
                     -- SLT / SLTI
-                    when (F7_SLT & F3_SLT)   |
-                        (F7_SLT & F3_SLTI) =>
+                    when (F7_SLT & F3_SLT) =>
                         ALU_OPCODE <= ALUOp_SLT;
 
                     -- SLTU / SLTIU
-                    when (F7_SLTU & F3_SLTU) |
-                        (F7_SLTU & F3_SLTIU) =>
+                    when (F7_SLTU & F3_SLTU) =>
                         ALU_OPCODE <= ALUOp_SLTU;
 
                     -- XOR / XORI
-                    when (F7_XOR & F3_XOR)   |
-                        (F7_XOR & F3_XORI) =>
+                    when (F7_XOR & F3_XOR) =>
                         ALU_OPCODE <= ALUOp_XOR;
 
                     -- SRL / SRLI
-                    when (F7_SRL & F3_SRL)   |
-                        (F7_SRL & F3_SRLI) =>
+                    when (F7_SRL & F3_SRL) =>
                         ALU_OPCODE <= ALUOp_SRL;
 
                     -- SRA / SRAI
-                    when (F7_SRA & F3_SRA)   |
-                        (F7_SRAI & F3_SRAI) =>
+                    when (F7_SRA & F3_SRA) =>
                         ALU_OPCODE <= ALUOp_SRA;
 
                     -- OR / ORI
-                    when (F7_OR & F3_OR)     |
-                        (F7_OR & F3_ORI) =>
+                    when (F7_OR & F3_OR) =>
                         ALU_OPCODE <= ALUOp_OR;
 
                     -- AND / ANDI
-                    when (F7_AND & F3_AND)   |
-                        (F7_AND & F3_ANDI) =>
+                    when (F7_AND & F3_AND) =>
                         ALU_OPCODE <= ALUOp_AND;
 
                     when others =>

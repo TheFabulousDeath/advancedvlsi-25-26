@@ -29,6 +29,7 @@ package instruction_ranges is
     subtype J_IMMEDIATE_RANGE       is integer range 31 downto 12;
     subtype OPCODE_RANGE            is integer range 6 downto 0;
 
+    -- #TODO : Add function to write S type immediates.
 end instruction_ranges;
 
 library IEEE;
@@ -113,8 +114,8 @@ package register_aliases is
 	constant x7  : std_logic_vector(4 downto 0) := "00111";  -- x7 / t2 (temporary)
 	constant x8  : std_logic_vector(4 downto 0) := "01000";  -- x8 / s0 (saved)
 	constant x9  : std_logic_vector(4 downto 0) := "01001";  -- x9 / s1 (saved)
-	constant x10 : std_logic_vector(4 downto 0) := "01010";  -- x10 / a0 (argument)
-	constant x11 : std_logic_vector(4 downto 0) := "01011";  -- x11 / a1 (argument)
+	constant x10 : std_logic_vector(4 downto 0) := "01010";  -- x10 / a0 (argument/return)
+	constant x11 : std_logic_vector(4 downto 0) := "01011";  -- x11 / a1 (argument/return)
 	constant x12 : std_logic_vector(4 downto 0) := "01100";  -- x12 / a2 (argument)
 	constant x13 : std_logic_vector(4 downto 0) := "01101";  -- x13 / a3 (argument)
 	constant x14 : std_logic_vector(4 downto 0) := "01110";  -- x14 / a4 (argument)

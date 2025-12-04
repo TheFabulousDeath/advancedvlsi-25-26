@@ -8,12 +8,14 @@ use work.instruction_ranges.ALL;
 
 entity sccpu is
     port(
-        rst, clk                        : in STD_LOGIC;
-        DEBUG_DATA_MEM_READ_DATA        : out STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
-        DEBUG_INSTRUCTION_BUS           : out STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
-        INSTRUCTION_MEMORY_WRITE_DATA   : in STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
-        INSTRUCTION_MEMORY_WRITE_ADDR   : in STD_LOGIC_VECTOR(log2(INSTRUCTION_MEM_SIZE) - 1 downto 0);
-        INSTRUCTION_MEMORY_WRITE_ENABLE : in STD_LOGIC
+        rst, clk                        : in	STD_LOGIC;
+        DEBUG_DATA_MEM_READ_DATA        : out	STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+        DEBUG_INSTRUCTION_BUS           : out	STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+        INSTRUCTION_MEMORY_WRITE_DATA   : in	STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+        INSTRUCTION_MEMORY_WRITE_ADDR   : in	STD_LOGIC_VECTOR(log2(INSTRUCTION_MEM_SIZE) - 1 downto 0);
+        INSTRUCTION_MEMORY_WRITE_ENABLE : in	STD_LOGIC;
+        INSTRUCTION_MEMORY_CLOCK        : in	STD_LOGIC;
+		HALT_PC							: in	STD_LOGIC
     );
     
 end entity sccpu;
@@ -33,8 +35,10 @@ architecture behav of sccpu is
         );
     end component;
     
-    signal JumpAddressOffset                : STD_LOGIC_VECTOR(COUNTER_RANGE);
-    
+	signal JUMP_ADDRESS						: STD_LOGIC_VECTOR(COUNTER_RANGE);
+    signal IMMEDIATE                		: STD_LOGIC_VECTOR(ARCHITECTURE_RANGE);
+    signal LOAD_COUNTER						: STD_LOGIC;
+
     signal InstructionMemoryReadAddress     : STD_LOGIC_VECTOR(COUNTER_RANGE);
     
     signal INSTRUCTION_BUS                  : STD_LOGIC_VECTOR(INSTRUCTION_RANGE);
@@ -63,13 +67,29 @@ begin
             bits => ARCHITECTURE_WIDTH
         )
         port map(
-            load        => Branch_Taken,
+            load        => LOAD_COUNTER,
             rst         => rst,
             clk         => clk,
-            pc_in       => JumpAddressOffset,
+            pc_in       => JUMP_ADDRESS,
             output      => InstructionMemoryReadAddress
         );
     
+	HALT_MUX : process(HALT_PC, IMMEDIATE)
+	begin
+		JUMP_ADDRESS <= IMMEDIATE;
+		if HALT_PC = '1' then
+			JUMP_ADDRESS <= (others => '0');
+		end if;
+	end process;
+    
+	LOAD_COUNTER_MUX : process(Branch_Taken)
+	begin
+		LOAD_COUNTER <= Branch_Taken;
+		if HALT_PC = '1' then
+			LOAD_COUNTER <= '1';
+		end if;
+	end process;
+
     instruction_memory : entity work.memory(distributed)
         generic map(
             word_size   => ARCHITECTURE_WIDTH,
@@ -79,10 +99,11 @@ begin
             addr_read   => InstructionMemoryReadAddress(log2(INSTRUCTION_MEM_SIZE) - 1 downto 0),
             addr_write  => INSTRUCTION_MEMORY_WRITE_ADDR,
             write_en    => INSTRUCTION_MEMORY_WRITE_ENABLE,
-            clk         => clk,
+            clk         => INSTRUCTION_MEMORY_CLOCK,
             data_write  => INSTRUCTION_MEMORY_WRITE_DATA,
             data_read   => INSTRUCTION_BUS
         );
+    
     
     main_controller : entity work.Control
         port map(
@@ -96,8 +117,8 @@ begin
             ALUOp       => CTRL_ALUOP
         );
     
-    register_File : entity work.register_file
     
+    register_File : entity work.register_file
         generic map(
             word_size   => ARCHITECTURE_WIDTH,
             size        => REG_FILE_SIZE
@@ -113,11 +134,13 @@ begin
             clk         => clk
         );
         
+        
     immediate_generator : entity work.immediate_generator
         port map(
             Instruction => INSTRUCTION_BUS,
-            Immediate   => JumpAddressOffset
+            Immediate   => IMMEDIATE
         );
+        
         
     alu : entity work.alu
         generic map(
@@ -134,14 +157,13 @@ begin
         );
         
         ALU_A <= REGISTER1_DATA;
+        
 
-
-
-    ALU_MUX : process(CTRL_ALUSrc, REGISTER2_DATA, JumpAddressOffset)
+    ALU_MUX : process(CTRL_ALUSrc, REGISTER2_DATA, IMMEDIATE)
         begin
             ALU_B <= REGISTER2_DATA;
             if CTRL_ALUSrc = '1' then
-                ALU_B <= JumpAddressOffset;
+                ALU_B <= IMMEDIATE;
             end if;
         end process;
     
@@ -159,8 +181,8 @@ begin
             data_write  => REGISTER2_DATA,
             data_read   => DataMemoryReadData
         );
-    
         DataMemoryAddress <= ALU_C;
+
 
     DATA_MEM_OUT_MUX : process(CTRL_MemtoReg, DataMemoryReadData, ALU_C)
         begin
@@ -170,12 +192,14 @@ begin
             end if;
         end process;
 
+
     alu_controller : entity work.alu_controller
         port map(
             Instruction => INSTRUCTION_BUS,
             CTRL_ALU_OP => CTRL_ALUOP,
             ALU_OPCODE =>ALU_OPCODE
         );
+
 
     BRANCH_AND : process(CTRL_Branch, ZERO_FLAG)
     begin
@@ -184,6 +208,7 @@ begin
             Branch_Taken <= '1';
         end if;
     end process;
+    
     
     DEBUG_DATA_MEM_READ_DATA <= DataMemoryReadData;
     DEBUG_INSTRUCTION_BUS <= INSTRUCTION_BUS;

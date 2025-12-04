@@ -7,6 +7,7 @@ use work.register_aliases.ALL;
 use work.funct7.ALL;
 use work.funct3.ALL;
 use work.opcodes.ALL;
+use work.instruction_ranges.ALL;
 
 entity memory is
 	generic (
@@ -23,7 +24,7 @@ end entity memory;
 
 architecture bram of memory is
 
-    type mem_file_type is array (0 to mem_size) of std_logic_vector(word_size - 1 downto 0);
+    type mem_file_type is array (0 to mem_size - 1) of std_logic_vector(word_size - 1 downto 0);
     
     signal RAM : mem_file_type;
     
@@ -46,7 +47,7 @@ end bram;
 
 architecture distributed of memory is
 
-    type mem_file_type is array (0 to mem_size) of std_logic_vector(word_size - 1 downto 0);
+    type mem_file_type is array (0 to mem_size - 1) of std_logic_vector(word_size - 1 downto 0);
     
     signal RAM : mem_file_type;
     
@@ -55,10 +56,14 @@ architecture distributed of memory is
 
 begin
 
-        -- First instruction:
-    RAM(0) <= F7_ADD & x0 & x0 & F3_ADD & x0 & OP_REG_REG;
-    RAM(1) <= F7_ADD & x0 & x0 & F3_ADD & x0 & OP_REG_REG;
- 
+    RAM(0) <= F7_ADD & x0 & x0 & F3_ADD & x0 & OP_REG_REG; -- NOP
+    -- Small Program:
+    --RAM(0) <= F7_ADD & x0 & x0 & F3_ADD & x0 & OP_REG_REG; -- NOP
+    --RAM(1) <= to_signed(8, I_IMMEDIATE_RANGE'Length) & x0 & F3_ADDI & x5 & OP_REG_IMM; --ADDI x5, x0, 8
+    --RAM(2) <= F7_ADD & x0 & x5 & F3_ADD & x6 & OP_REG_REG; -- ADD x6, x0, x5
+    --RAM(3) <= F7_ADD & x5 & x6 & F3_ADD & x5 & OP_REG_REG; -- ADD x5, x6, x5
+    --RAM(4) <= "0000000" & x5 & x0 & F3_SW & "00000" & OP_STORE; -- SW x5, 0(x0) 
+
     sequential_logic : process(clk)
     begin
         if rising_edge(clk) then
