@@ -8,7 +8,7 @@ entity alu is
     generic(
         bits : integer := 32;
         op_width : integer := 4
-    );
+    ); 
     port(
         a, b : in std_logic_vector(bits - 1 downto 0);
         op : in std_logic_vector(op_width -1 downto 0);

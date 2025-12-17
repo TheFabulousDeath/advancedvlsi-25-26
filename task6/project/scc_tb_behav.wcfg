@@ -19,12 +19,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="20.271 ns"></ZoomEndTime>
-      <Cursor1Time time="15.000 ns"></Cursor1Time>
+      <ZoomEndTime time="20.351 ns"></ZoomEndTime>
+      <Cursor1Time time="50.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="952"></NameColumnWidth>
-      <ValueColumnWidth column_width="149"></ValueColumnWidth>
+      <ValueColumnWidth column_width="141"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="74" />
    <wvobject fp_name="/scc_tb/clk" type="logic">
